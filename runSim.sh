@@ -24,7 +24,7 @@ for admix in 0.5.to.0.6 0.6.to.0.7 0.7.to.0.8
 do
     for pop in inuit danes
     do
-	plink19 --allow-no-sex --bfile geno/GreenlandSiblings.autosome.geno.0.01.withAdmix --extract trunc.sim/sim.$sim.truncSNPs --keep plink/${admix}.$pop --recode A --out plink/sim.$sim.${admix}.$pop
+	plink19 --allow-no-sex --keep-allele-order --bfile geno/GreenlandSiblings.autosome.geno.0.01.withAdmix --extract trunc.sim/sim.$sim.truncSNPs --keep plink/${admix}.$pop --recode A --out plink/sim.$sim.${admix}.$pop
 	Rscript ./creating.own.pheno.R plink/sim.$sim.${admix}.$pop.raw trunc.sim/sim.$sim.truncSNPs.withBetas plink/sim.$sim.all.frq trunc.sim/sim.$sim.${admix}.$pop.genoSum
     done
 done
@@ -32,7 +32,7 @@ done
 for admix in 0.8.to.0.9 0.9.to.0.99 0.99.to.1
 do
     pop=inuit
-    plink19 --allow-no-sex --bfile geno/GreenlandSiblings.autosome.geno.0.01.withAdmix --extract trunc.sim/sim.$sim.truncSNPs --keep plink/${admix}.$pop --recode A --out plink/sim.$sim.${admix}.$pop
+    plink19 --allow-no-sex --keep-allele-order --bfile geno/GreenlandSiblings.autosome.geno.0.01.withAdmix --extract trunc.sim/sim.$sim.truncSNPs --keep plink/${admix}.$pop --recode A --out plink/sim.$sim.${admix}.$pop
     Rscript ./creating.own.pheno.R plink/sim.$sim.${admix}.$pop.raw trunc.sim/sim.$sim.truncSNPs.withBetas plink/sim.$sim.all.frq trunc.sim/sim.$sim.${admix}.$pop.genoSum	    
 done
 
