@@ -1,4 +1,4 @@
-#!/usr/bin/Rscript
+#!/usr/local/bin/Rscript
 
 admix <- read.table('admixture.k2.table',h=T,as.is=T)
 fam <- read.table('geno/GreenlandSiblings.autosome.geno.0.01.fam',h=F,as.is=T)

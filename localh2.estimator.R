@@ -1,4 +1,4 @@
-#!/usr/bin/Rscript
+#!/usr/local/bin/Rscript
 localH <- NULL
 for(h in c(0.4,0.6,0.8)){
     for(sim in 1:100){
